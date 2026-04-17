@@ -1,3 +1,6 @@
+
+
+
 from google import genai
 from dotenv import load_dotenv
 import os,io
@@ -19,7 +22,7 @@ def bangla_note_generator(images):
      make sure to add necessary markdown to differentiate different section"""
 
      response= client.models.generate_content(
-         model= "gemini-3-flash-preview",
+         model= "gemini-2.5-flash",
          contents=[images,prompt]
      )
 
@@ -32,7 +35,7 @@ def note_generator(images):
     make sure to add necessary markdown to differentiate different section"""
 
     response= client.models.generate_content(
-        model= "gemini-3-flash-preview",
+        model= "gemini-2.5-flash",
         contents=[images,prompt]
     )
 
@@ -54,7 +57,7 @@ def quiz_generator(image,difficulty):
     prompt=f"generate 3 quizzes based on the {difficulty}.make sure to add down markdown to differentiate the options. Add correct answer too apter the quiz"
 
     response= client.models.generate_content(
-        model= "gemini-3-flash-preview",
+        model= "gemini-2.5-flash",
         contents=[image,prompt]
     )
 
